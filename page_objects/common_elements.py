@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from page_objects.base import PageObject
 
 from page_objects.page_content import head, main_rates
-from webdriver import DriverManager
+from utils.webdriver import DriverManager
 
 
 class Header(PageObject):
@@ -130,12 +130,3 @@ class ExchangeRates(PageObject):
     def _assert_text(v1, v2):
         return f"Класс элемента {v1} не соответствует значению {v2}"
 
-
-if __name__ == "__main__":
-    dm = DriverManager()
-    dm.webdriver("chrome").get("https://infinbank.com/ru/")
-    rates = ExchangeRates(dm.webdriver("chrome"), "RU")
-
-    rates.check_all_tickers()
-
-    dm.webdriver("chrome").close()

@@ -1,5 +1,5 @@
 from behave import fixture
-from webdriver import DriverManager
+from utils.webdriver import DriverManager
 
 
 @fixture
@@ -8,7 +8,7 @@ def selenium_browser_chrome(context):
     context.driver = None
     yield context.driver
     # -- CLEANUP-FIXTURE PART:
-    context.driver.quit()
+    context.driver.close()
 
 
 def after_scenario(context, scenario):

@@ -44,3 +44,20 @@ class PageObject:
 
     def change_lang(self, lang):
         self.current_lang = lang
+
+
+class EndpointPage(PageObject):
+
+    def __init__(self,
+                 webdriver,
+                 current_lang,
+                 url: str):
+        super().__init__(
+            webdriver,
+            current_lang
+        )
+        self.URL = url % self.current_lang.lower()
+
+    def check_url(self):
+        assert self.webdriver.current_url == self.URL, \
+            f"URL страницы '{self.webdriver.current_url}' не соответствует ожидаемому '{self.URL}'"
