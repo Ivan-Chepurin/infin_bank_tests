@@ -10,7 +10,7 @@
 > Это утановит все необходимые зависимости
 
 > 4 Ввести команду 
->>  -f allure_behave.formatter:AllureFormatter -o reports ./features
+>> behave -f allure_behave.formatter:AllureFormatter -o reports ./features
 > 
 > Это запустит тесты а и сохранит отчеты в формате Allure
 >
