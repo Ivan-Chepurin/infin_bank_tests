@@ -4,7 +4,7 @@ from selenium import webdriver
 
 class DriverManagerBase:
     DRIVERS = {
-        "chrome": (webdriver.Chrome, r"C:\chromedriver\chromedriver.exe"),
+        "chrome": (webdriver.Chrome, r"C:\path\to\chromedriver.exe"),
         "firefox": (webdriver.Firefox, r"C:\path\to\geckodriver.exe")
     }
     WEB_DRIVERS = {}
